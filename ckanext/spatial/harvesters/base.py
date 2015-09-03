@@ -637,8 +637,13 @@ class SpatialHarvester(HarvesterBase):
 
         model.Session.commit()
 
+        self.after_import_stage(package_dict)
+
         return True
     ##
+
+    def after_import_stage(self, package_dict):
+        return True
 
     def _is_wms(self, url):
         '''
